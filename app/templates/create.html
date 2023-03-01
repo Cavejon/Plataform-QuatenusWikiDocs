@@ -1,0 +1,56 @@
+{% load static %}
+
+
+<html lang="pt-br">
+<head>
+<title>Plataform For Support Quatenus°</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/createForm.css' %}">
+</head>
+
+<body style="background-image: url('{% static 'imgs/wallpaperFundo.png'%}')">
+    <div class="containerBox">
+        <h2 class="legendaQuatenus">Cadastre seu usuário aqui!</h2>
+
+        <img src="{% static 'imgs/logoBranca.png' %}" alt="logo Branca" class="logoBranca">
+
+        <form class="loginQuatenus" name="form-user" id="formUser" method="post" action="/store/">
+<div class="col-6 mt-4 m-auto">
+
+        {% if msg %}
+        <div class="alert {{class}}">
+            {{msg}}
+        </div>
+        {% endif %}
+
+    {% csrf_token %}
+
+            <input type="text" name="name" id="name" placeholder="Nome: " class="cadastroNome">
+
+            <input type="text" name="name" id="user" placeholder="Nome de usuário: " class="cadastroUser">
+
+            <input type="password" name="password" id="password" placeholder="Senha: " class="senhaUser">
+
+            <input type="password" name="password-conf" id="password-conf" placeholder="Confirme Senha:" class="confirSenha">
+
+            <input type="email" name="email" id="email" placeholder="Digite seu e-mail: " class="cadastroEmail">
+
+            <input type="submit" class="botaoEntrar" value="Cadastrar">
+
+
+</div>
+        </form>
+
+        <br>
+
+        <div class="loginFooter">
+            <label class="UILabelProductVersion">Version 2023.0.8406.28035 Build date 06/01/2023 :: Português</label>
+            <label class="UILabelProductCopyright">Copyright © QUATENUS INTERNACIONAL/WWIL 2011-2023 All Rights
+                Reserved</label>
+        </div>
+    </div>
+</body>
+
+</html>

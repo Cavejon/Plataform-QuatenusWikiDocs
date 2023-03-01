@@ -1,0 +1,493 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<body id="bg" style="background-image: url('{% static 'imgs/truckWallpaper.png'%}')" ></body>
+<link rel="stylesheet" href="{% static 'css/stylePDF.css' %}">
+    {% if request.user.is_authenticated %}
+  <!--Começo do dropDown-->
+  <div class="collapse" id="navbarToggleExternalContent">
+
+    <div class="bg-dark p-4">
+
+      <h5 class="text-white h4">Select options</h5>
+      <span class="text-muted">
+        <a href="#">Upload</a>
+      </span>
+      <span class="text-muted">
+        <a href="#">Quatenus GTI</a>
+      </span>
+      <span class="text-muted">
+        <a href="/logouts/">Logout</a>
+      </span>
+      {% if perms.admin.can_edit_users %}
+      <span class="text-muted">
+        <a href="#">Painel Administrador</a>
+      </span>
+      {% endif %}
+    </div>
+
+  </div>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <img src="{% static 'imgs/logoBranca.png' %}" alt="logo Branca" class="logoBranca">
+  <!--Fim navBar-->
+  <div class="subMenu">
+    <div class="linkQuatenus"><b><a href="/dashboard/"><i class="ph-book-bookmark"></i>Manuais De Treinamento</a></b></div>
+    <div class="linkQuatenus"><a href="/homepdf/"><b><i class="ph-file-pdf-bold"></i>Relatórios PDF</b></a>
+    </div>
+    <div class="linkQuatenus"><b><a href="/homeit/"><i class="ph-books"></i>Instrução De
+          Trabalho</a></b></div>
+  </div>
+
+  <div class="grid-container">
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-cpu"></i>
+        Sistema
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" id="scrollBar">
+        <li><a class="dropdown-item" href="#">Empresas</a></li>
+        <li><a class="dropdown-item" href="#">Usuários</a></li>
+        <li><a class="dropdown-item" href="#">Dispositivos</a></li>
+        <li><a class="dropdown-item" href="#">Sensores Virtuais</a></li>
+        <li><a class="dropdown-item" href="#">Cartões SIM</a></li>
+        <li><a class="dropdown-item" href="#">Eventos de Dispositivos</a></li>
+        <li><a class="dropdown-item" href="#">Moedas</a></li>
+        <li><a class="dropdown-item" href="#">Países</a></li>
+        <li><a class="dropdown-item" href="#">Regiões</a></li>
+        <li><a class="dropdown-item" href="#">Sistema de cache</a></li>
+        <li><a class="dropdown-item" href="#">Meterologia</a></li>
+        <li><a class="dropdown-item" href="#">Comunicações</a></li>
+        <li><a class="dropdown-item" href="#">Central de SMS</a></li>
+        <li><a class="dropdown-item" href="#">Actualizações do Sistema</a></li>
+        <li><a class="dropdown-item" href="#">Registros de Sistema</a></li>
+        <li><a class="dropdown-item" href="#">Proteção de dados</a></li>
+        <li><a class="dropdown-item" href="#">Firewall</a></li>
+        <li><a class="dropdown-item" href="#">Perfis</a></li>
+        <li><a class="dropdown-item" href="#">Documentos(Armazenamento)</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-gear-six"></i>Configuração
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" id="scrollBar">
+        <li><a class="dropdown-item" href="#">Empresa</a></li>
+        <li><a class="dropdown-item" href="#">Usuários</a></li>
+        <li><a class="dropdown-item" href="#">Dispositivos</a></li>
+        <li><a class="dropdown-item" href="#">Pastas</a></li>
+        <li><a class="dropdown-item" href="#">Eventos de Sistema</a></li>
+        <li><a class="dropdown-item" href="#">Pontos de interesse</a></li>
+        <li><a class="dropdown-item" href="#">Contabilidade</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de Documentos</a></li>
+        <li><a class="dropdown-item" href="#">Opções</a></li>
+        <li><a class="dropdown-item" href="#">Feriados </a></li>
+        <li><a class="dropdown-item" href="#">Taxas/Impostos</a></li>
+        <li><a class="dropdown-item" href="#">Sistema de Eventos</a></li>
+        <li><a class="dropdown-item" href="#">Registros de Sistema</a></li>
+        <li><a class="dropdown-item" href="#">Financeiro</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-car"></i>Veículos
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" id="scrollBar">
+        <li><a class="dropdown-item" href="#">Veículos</a></li>
+        <li><a class="dropdown-item" href="#">Retiradas</a></li>
+        <li><a class="dropdown-item" href="#">Vendas</a></li>
+        <li><a class="dropdown-item" href="#">Horários</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de Veículos</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de Especificação</a></li>
+        <li><a class="dropdown-item" href="#">Devoluções</a></li>
+        <li><a class="dropdown-item" href="#">Inspeções</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-user-switch"></i>Condutores
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" id="scrollBar">
+        <li><a class="dropdown-item" href="#">Veículos</a></li>
+        <li><a class="dropdown-item" href="#">Retiradas</a></li>
+        <li><a class="dropdown-item" href="#">Vendas</a></li>
+        <li><a class="dropdown-item" href="#">Horários</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de Veículos</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de Especificação</a></li>
+        <li><a class="dropdown-item" href="#">Devoluções</a></li>
+        <li><a class="dropdown-item" href="#">Inspeções</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-file"></i>Multas
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Multas</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de Multas</a></li>
+        <li><a class="dropdown-item" href="#">Autoridades fiscalizadoras</a></li>
+        <li><a class="dropdown-item" href="#">Resumo geral de multas</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-file-doc"></i>Contratos
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Contratos</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-shield"></i>Seguros
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Seguros</a></li>
+        <li><a class="dropdown-item" href="#">Registro de sinistros</a></li>
+        <li><a class="dropdown-item" href="#">Resumo geral</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-coins"></i>Despesas
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Despesas</a></li>
+        <li><a class="dropdown-item" href="#">Itens</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de documentos</a></li>
+        <li><a class="dropdown-item" href="#">Classes de documentos</a></li>
+        <li><a class="dropdown-item" href="#">Eventos</a></li>
+        <li><a class="dropdown-item" href="#">Resumo geral</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-handshake"></i>Aluguel
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" id="scrollBar">
+        <li><a class="dropdown-item" href="#">Pedidos de reserva</a></li>
+        <li><a class="dropdown-item" href="#">Reservas </a></li>
+        <li><a class="dropdown-item" href="#">Contratos</a></li>
+        <li><a class="dropdown-item" href="#">Operações</a></li>
+        <li><a class="dropdown-item" href="#">Classes </a></li>
+        <li><a class="dropdown-item" href="#">Promoção</a></li>
+        <li><a class="dropdown-item" href="#">Panorama</a></li>
+        <li><a class="dropdown-item" href="#">Facturação </a></li>
+        <li><a class="dropdown-item" href="#">Estados</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-path"></i>Rotas
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Rotas</a></li>
+        <li><a class="dropdown-item" href="#">Planejamento </a></li>
+        <li><a class="dropdown-item" href="#">Perfis de condução</a></li>
+        <li><a class="dropdown-item" href="#">Panorama</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-users"></i>Equipes
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" id="scrollBar">
+        <li><a class="dropdown-item" href="#">Tarefas</a></li>
+        <li><a class="dropdown-item" href="#">Planejamento</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de Tarefas</a></li>
+        <li><a class="dropdown-item" href="#">Modelos de tarefa</a></li>
+        <li><a class="dropdown-item" href="#">Folha de atividade</a></li>
+        <li><a class="dropdown-item" href="#">Recursos</a></li>
+        <li><a class="dropdown-item" href="#">Grupos de Recursos</a></li>
+        <li><a class="dropdown-item" href="#">Ausências</a></li>
+        <li><a class="dropdown-item" href="#">Horários</a></li>
+        <li><a class="dropdown-item" href="#">Mapeamento</a></li>
+        <li><a class="dropdown-item" href="#">Eventos</a></li>
+        <li><a class="dropdown-item" href="#">Estados</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-file-cloud"></i>Documentos
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Documentos</a></li>
+        <li><a class="dropdown-item" href="#">Agendamentos</a></li>
+        <li><a class="dropdown-item" href="#">Dicionário de dados</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de documentos</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de Dicionário de dados</a></li>
+        <li><a class="dropdown-item" href="#">Armazenamento</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-ticket"></i>Tags
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Tags</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de Objetos</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-device-mobile"></i>Equipamentos Móveis
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Equipamentos Móveis</a></li>
+        <li><a class="dropdown-item" href="#">Cartões SIM</a></li>
+        <li><a class="dropdown-item" href="#">Marcas</a></li>
+        <li><a class="dropdown-item" href="#">Modelos</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de Especificação</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-truck"></i>Máquinas
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Máquinas</a></li>
+        <li><a class="dropdown-item" href="#">Marcas</a></li>
+        <li><a class="dropdown-item" href="#">Modelos</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de Especificação</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-users-three"></i>Usuários
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Folha de atividade</a></li>
+        <li><a class="dropdown-item" href="#">Ausências</a></li>
+        <li><a class="dropdown-item" href="#">Horários</a></li>
+        <li><a class="dropdown-item" href="#">Estados</a></li>
+        <li><a class="dropdown-item" href="#">Equipamentos</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-globe-hemisphere-west"></i>Objetos Geográficos
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Pontos de interesse</a></li>
+        <li><a class="dropdown-item" href="#">Áreas de interesse</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de ponto de interesse</a></li>
+        <li><a class="dropdown-item" href="#">Tipos de áreas de interesse</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-chat-dots"></i>Mensagens
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Mensagens QOSD</a></li>
+        <li><a class="dropdown-item" href="#">Central de SMS</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-lock-key"></i>Segurança
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Alarmes</a></li>
+        <li><a class="dropdown-item" href="#">Avisos</a></li>
+        <li><a class="dropdown-item" href="#">Central de Segurança</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+        id="buttonDropDown">
+        <i class="ph-file-pdf"></i>Relatórios
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li class="liDrop"><a class="dropdown-item" href="#">Atividade</a>
+          <ul class="liDrop" id="scroll">
+            <li class="liDrop"><a class="dropdown-item" href="#">1.1 Visitas por veículo / usuário</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.2 Controle de itinerário mensal(Pontos de
+                interesse)</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.3 Relatório da frota</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.4 Controle de itinerário mensal (Quadro)</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.5 Resumo de Utilização Diária Km's</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.6 Relatório de utilização de Veículos</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.7 Detalhe por dispositivo ponto a ponto</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.8 Análise cumprimento de Rotas</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.9 Relatório de utilização diária extra</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.10 Relatório de utilização diária extra(Resumo)</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.11 Detalhe por veículo ponto a ponto(Info
+                adicional)</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.12 Relatório de Frota Profissional</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.13 Relatório da frota por veículo(paradas)</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.14 Resumo simplificado da frota</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.15 Relatório de percursos de Veículos</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.16 Relatório de estados de usuário</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.17 Localização de Ativos</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.18 Estados Operacionais</a>
+            <li class="liDrop"><a class="dropdown-item" href="#">1.19 Relatório da frota por usuário</a>
+          </ul>
+        </li>
+        <li class="liDropComunicacao"><a class="dropdown-item" href="#">Comunicação</a>
+          <ul class="liDropComunicacao">
+            <li class="liDropComunicacao"><a class="dropdown-item" href="#">2.2 Estatísticas de Mensagens</a>
+            <li class="liDropComunicacao"><a class="dropdown-item" href="#">2.3 Estatísticas de mensagens(SMS)</a>
+            <li class="liDropComunicacao"><a class="dropdown-item" href="#">2.4 Estatísticas das Comunicações</a>
+            <li class="liDropComunicacao"><a class="dropdown-item" href="#">2.5 Dispositivos sem Localização</a>
+          </ul>
+        </li>
+        <li class="liDropTecnica"><a class="dropdown-item" href="#">Técnica</a>
+          <ul class="liDropTecnica">
+            <li class="liDropTecnica"><a class="dropdown-item" href="#">3.2 Anomalias técnicas</a>
+            <li class="liDropTecnica"><a class="dropdown-item" href="#">3.6 Ficha dos Veículos</a>
+            <li class="liDropTecnica"><a class="dropdown-item" href="#">3.7 Próximas inspeções e revisões</a>
+          </ul>
+        </li>
+        <li class="liDropGestao"><a class="dropdown-item" href="#">Gestão</a>
+          <ul class="liDropGestao" id="scroll">
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.1 Ranking dos Condutores</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.2 Financiamento por veículo</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.3 Resumo geral de Despesas</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.4 Custo total de utilização da frota</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.5 Manutenção por veículo</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.6 Estacionamentos por veículo</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.7 Abastecimento por dispositivo</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.8 Pedágios por veículo</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.9 Ranking dos veículo</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.10 Análise de documentação oficial</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.11 Seguros</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.12 Informação adicional avançada</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.13 Atribuição de Veículos</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.14 Autorizações de utilização extra</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.15 Reconciliação de Despesas</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.16 Produtividade da frota</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.17 Folha de atividade</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.18 Análise de documentação(por condutor)</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.19 Resumo geral de multas</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.20 Desvio de médias de consumo por
+                dispositivo</a>
+            <li class="liDropGestao"><a class="dropdown-item" href="#">4.21 Médias de consumo reais por classe -
+                marca</a>
+          </ul>
+          <!--trocar de posição para que seja no top-->
+        </li>
+        <li class="liDropPerformance"><a class="dropdown-item" href="#">Performance</a>
+          <ul class="liDropPerformance">
+            <li class="liDropPerformance"><a class="dropdown-item" href="#">5.4 Análise de performance mensal</a>
+            <li class="liDropPerformance"><a class="dropdown-item" href="#">5.5 Análise de performance
+                mensal(tempos)</a>
+          </ul>
+        </li>
+        <li class="liDropSeguranca"><a class="dropdown-item" href="#">Segurança</a>
+          <ul class="liDropSeguranca">
+            <li><a class="dropdown-item" href="#">6.1 Eventos de Alarmes</a>
+            <li><a class="dropdown-item" href="#">6.4 Relatório de velocidade</a>
+          </ul>
+
+        </li>
+        <li class="liDropAluguer"><a class="dropdown-item" href="#">Aluguer</a>
+          <ul class="liDropAluguer">
+            <li><a class="dropdown-item" href="#">7.1 Reservas caducadas</a>
+            <li><a class="dropdown-item" href="#">7.2 Resumo de faturação</a>
+          </ul>
+        </li>
+        <li class="liDropEquipes"><a class="dropdown-item" href="#">Equipes</a>
+          <ul class="liDropEquipes" id="scroll">
+            <li><a class="dropdown-item" href="#">8.1 Lista de tarefas de Equipes</a>
+            <li><a class="dropdown-item" href="#">8.2 Tarefas do usuário por dia</a>
+            <li><a class="dropdown-item" href="#">8.3 Tarefas do usuário por semana</a>
+            <li><a class="dropdown-item" href="#">8.4 Estatísticas de tarefas</a>
+            <li><a class="dropdown-item" href="#">8.5 Desvios de tarefas</a>
+            <li><a class="dropdown-item" href="#">8.6 Folha de ponto presencial</a>
+            <li><a class="dropdown-item" href="#">8.7 Lista de tarefas da equipe - Resumo</a>
+            <li><a class="dropdown-item" href="#">8.8 Relatório de atividade</a>
+            <li><a class="dropdown-item" href="#">8.9 Exportação de dados de estados de usuário</a>
+            <li><a class="dropdown-item" href="#">8.10 Exportação de dados de estados de usuário(ERP Totvs
+                Microsiga)</a>
+            <li><a class="dropdown-item" href="#">8.11 Exportação de dados de ausências de Usuários</a>
+            <li><a class="dropdown-item" href="#">8.12 Exportação de dados de tarefas</a>
+          </ul>
+
+        </li>
+        <li class="liDropImportacoes"><a class="dropdown-item" href="#">Importações</a>
+          <ul class="liDropImportacoes">
+            <li><a class="dropdown-item" href="#">9.1 Importação de despesas Ticket Log</a>
+          </ul>
+
+        </li>
+        <li class="liDropDocumento"><a class="dropdown-item" href="#">Documentos</a>
+          <ul class="liDropDocumento">
+            <li><a class="dropdown-item" href="#">10.1 Exportação de dados de documentos</a>
+          </ul>
+
+        </li>
+        <li><a class="dropdown-item" href="#">Relatórios Automáticos</a>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="popup">
+      <div class="popup-content">
+        <h1>X</h1>
+        <h2>Qual o intuito desta plataforma?</h2>
+        <p> Está página tem como função primária a exibição de manuais elaborados pelo setor de desenvolvimento e
+          inovação
+          para auxiliar nas rotinas diárias dos colaboradores internos, para usar basta clicar sobre o menu desejado e
+          após sobre o nome do documento.
+          <br><br>Em casos de dúvidas contatar o setor de Desenvolvimento e Inovação!
+        </p>
+      </div>
+    </div>
+
+    <script src="{% static 'js/popUp' %}"></script>
+
+    {% else %}
+        Você não tem acesso a essa área!
+    {% endif %}
+
+    {% endblock %}

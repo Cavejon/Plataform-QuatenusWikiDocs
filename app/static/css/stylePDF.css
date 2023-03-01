@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+
+	height: 100vh;
+	background-color: rgb(244, 245, 247);
+	background-image: url("/imgs/truckWallpaper.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	font-family: 'Inter', sans-serif;
+
+}
+
+/*Pop Up para exibição primária*/
+.popup {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	display: grid;
+	place-content: center;
+	 opacity: 0;
+	pointer-events: none;
+	transition: 200ms ease-in-out opacity;
+}
+
+.popup-content {
+	width: 40vw;
+	background-color: #fff;
+	padding: 5rem;
+	box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
+	border-radius: .5em;
+	opacity: 0;
+	transform: translateX(20%);
+	transition: 200ms ease-in-out opacity,
+	200ms ease-in-out transform;
+	position: relative;
+}
+
+.popup h1{
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	line-height: 1;
+	cursor: pointer;
+	user-select: none;
+}
+.popup h1:active{
+	transform: scale(.9);
+}
+
+.showPopup{
+
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: all;
+}
+
+a:link {
+	text-decoration: none;
+	color: #fff;
+
+}
+
+a {
+	color: inherit;
+}
+
+
+.linkQuatenus :visited {
+	color: #fff;
+}
+
+i {
+	margin-right: 10px;
+}
+
+nav {
+
+	background-color: #F36E21;
+	height: 5vh;
+	width: 100%;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}
+
+
+
+nav ul {
+
+	float: right;
+	margin-right: 45px;
+
+}
+
+nav ul li {
+
+	display: inline-block;
+	font-family: 'Inter';
+	line-height: 50px;
+	font-size: 20px;
+	margin: 0px 8px;
+
+}
+
+nav ul li a {
+	color: #fff;
+	font-size: 17px;
+	padding: 7px 13px;
+	border-radius: 3px;
+	text-transform: uppercase;
+}
+
+ul li ul {
+	visibility: hidden;
+	display: none;
+	position: fixed;
+	left: 195px;
+	font-family: 'Inter';
+	border: solid 1px #ccc;
+	padding: 0px;
+	border-radius: 7px;
+	background-color: #fff;
+}
+
+ul li:hover>ul,
+ul li ul:hover {
+
+	visibility: visible;
+	display: grid;
+
+
+}
+
+/*Menu secundario Começo*/
+.subMenu {
+
+    font-family: 'Inter';
+    font-size: 25px;
+    display: flex;
+    border: none;
+    background-image: linear-gradient(to top, #f57e0f, #F36E21);
+    justify-content: center;
+    border-radius: 8px;
+    top: 1%;
+    width: 85.5%;
+    margin-left: 7%;
+    padding: 9px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    position: relative;
+
+}
+
+/*Menu secundario Fim*/
+/*------------------------------------------------------------------*/
+/*Começo da settings dropDown*/
+
+
+.dropdown-item {
+
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	background-color: #fff;
+	border: none;
+
+}
+
+#buttonDropDown {
+
+	font-size: 27px;
+	color: #fff;
+	border: none;
+	background-color: #FE7F36;
+}
+
+.dropdown-item:hover {
+	background-color: #F36E21;
+	color: #fff;
+}
+
+#scrollBar {
+	overflow: auto;
+    height: 262px;
+    width: 299px;
+}
+
+/*FIM da settings dropDown*/
+/*------------------------------------------------------------------*/
+/*Ajustes de posição dos sub modulos lista drop down*/
+.linkQuatenus {
+	margin: 1px 60px;
+
+}
+
+.liDrop {
+	top: 0%;
+	left: 100%;
+}
+
+
+.liDropComunicacao {
+	top: 10%;
+	left: 100%;
+	list-style: none;
+}
+
+.liDropTecnica {
+	top: 20%;
+	left: 100%;
+	list-style: none;
+}
+
+.liDropGestao {
+	top: 30%;
+	left: 100%;
+	list-style: none;
+}
+
+.liDropPerformance {
+	top: 37%;
+	left: 100%;
+	list-style: none;
+}
+
+.liDropSeguranca {
+	top: 45%;
+	left: 100%;
+	list-style: none;
+}
+
+.liDropAluguer {
+	top: 54%;
+	left: 100%;
+	list-style: none;
+}
+
+.liDropEquipes {
+	top: 62%;
+	left: 100%;
+	list-style: none;
+}
+
+.liDropImportacoes {
+	top: 71%;
+	left: 100%;
+	list-style: none;
+}
+
+.liDropDocumento {
+	top: 80.5%;
+	left: 100%;
+	list-style: none;
+}
+
+/*Ajustes de posição dos sub modulos lista drop down*/
+/*------------------------------------------------------------------*/
+/*Scroll bar começo*/
+#scroll::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#scroll::-webkit-scrollbar {
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#scroll::-webkit-scrollbar-thumb {
+	background-color: #F36E21;
+	border-radius: 10px;
+
+}
+
+/*Scroll bar para as guias*/
+
+#scrollBar::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#scrollBar::-webkit-scrollbar {
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#scrollBar::-webkit-scrollbar-thumb {
+	background-color: #F36E21;
+	border-radius: 10px;
+}
+
+#scroll {
+	overflow-y: auto;
+	height: 195px;
+}
+
+/*Scroll bar Fim*/
+/*------------------------------------------------------------------*/
+/*Responsividade da plataforma começo*/
+@media (max-widht: 958px) {
+
+	.subMenu {
+		margin-left: 50px;
+	}
+
+	.linkQuatenus {
+
+		font-size: 10px;
+		top: 30%;
+	}
+}
+
+@media (max-widht: 958px) {
+
+	.linkQuatenus {
+		float: left;
+		font-size: 10%;
+		text-align: center;
+	}
+}
+
+@media (max-widht: 952px) {
+	.logoBranca {
+		font-size: 33px;
+		padding-left: 50px;
+	}
+
+	nav ul li a h1 {
+		font-size: 16px;
+
+	}
+
+	nav {
+		height: 6vh;
+	}
+}
+
+@media (max-widht:858px) {
+
+	ul {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #F36E21;
+		top: 80px;
+		left: 0px;
+		transition: all .5%;
+		text-align: center;
+	}
+
+	nav ul li {
+
+		display: block;
+		margin: 50px;
+		line-height: 30px;
+	}
+
+	.subMenu {
+		font-weight: 20px;
+	}
+
+	nav {
+		height: 6vh;
+	}
+}
+
+@media only screen and (min-width: 649px) and (max-width: 1366px) {
+	.subMenu {
+
+		font-size: 21px;
+		white-space: nowrap;
+		width: auto;
+		top: 2%;
+		left: -4%;
+
+
+	}
+
+	#buttonDropDown {
+
+		width: 290px;
+		font-size: 20px;
+	}
+
+
+	nav {
+		height: 6.9vh;
+	}
+
+	.logoBranca{
+		margin-top: -0.5%;
+		margin-left: 1.7%;
+	}
+
+}
+
+/*Responsividade da plataforma Fim*/
+/*------------------------------------------------------------------*/
+/*Icones exit upload começo*/
+
+
+#uploadArquivos {
+	position: absolute;
+	left: 97%;
+	top: 1.5%;
+}
+
+#loginQuatenus {
+	position: absolute;
+	left: 95%;
+	top: 1.5%;
+}
+
+/*Icones exit upload FIM*/
+/*------------------------------------------------------------------*/
+/*Texto da nav bar
+#tituloPrincipal {
+
+	font-family: 'Inter', sans-serif;
+	font-size: 24px;
+	text-align: center;
+	position: relative;
+	top: 16%;
+	color: #fff;
+}
+*/
+/*Texto da nav bar FIM*/
+/*------------------------------------------------------------------*/
+/*DIV GERAL DO BODY*/
+.grid-container {
+	display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    font-size: 20px;
+    align-items: center;
+    row-gap: 26px;
+    margin-top: 56px;
+}
+
+/*DIV GERAL DO BODY FIM*/
+/*------------------------------------------------------------------*/
+/*lOGO DA QUATENUS NAV BAR*/
+.logoBranca {
+
+    width: 140px;
+    position: relative;
+    top: -4.4%;
+    left: 4%;
+}
+
+/*lOGO DA QUATENUS NAV BAR FIM*/
+/*------------------------------------------------------------------*/
+/*NavBar Responsive Teste*/
+
+/*TEST NAV BAR RESPONSIVE AND HIDDEN*/
+
+.container-fluid{
+
+	background-color: #F36E21;
+	height: 50px;
+	top: 0px;
+	position: absolute;
+}
+
+.text-muted {
+    --bs-text-opacity: 1;
+    color:white!important;
+     display: block;
+}
+
+
+a:hover{
+	color: #F36E21;
+}

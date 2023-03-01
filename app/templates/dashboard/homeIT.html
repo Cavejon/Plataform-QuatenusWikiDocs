@@ -1,0 +1,365 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/styleIT.css' %}">
+    {% if request.user.is_authenticated %}
+   <!--Começo do dropDown-->
+   <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h4">Select options</h5>
+      <span class="text-muted">
+        <a href="#">Upload</a>
+      </span>
+      <span class="text-muted">
+        <a href="#">Relatórios PDF</a>
+      </span>
+      <span class="text-muted">
+        <a href="#">Quatenus GTI</a>
+      </span>
+      <span class="text-muted">
+        <a href="/logouts/">Logout</a>
+      </span>
+         {% if perms.admin.can_edit_users %}
+              <span class="text-muted">
+        <a href="#">Painel Administrador</a>
+      </span>
+      {% endif %}
+
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <img src="{% static 'imgs/logoBranca.png' %}" alt="logo Branca" class="logoBranca">
+  <!--Fim navBar-->
+    <div class="subMenu">
+        <div class="linkQuatenus"><b><a href="/dashboard/"><i class="ph-book-bookmark"></i>Manuais De
+                    Treinamento</a></b></div>
+        <div class="linkQuatenus"><a href="/homepdf/"><b><i class="ph-file-pdf-bold"></i>Relatórios PDF</b></a></div>
+        <div class="linkQuatenus"><b><a href="#"><i class="ph-books"></i>Instrução De
+                    Trabalho</a></b></div>
+    </div>
+
+
+    <div class="grid-container">
+
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="buttonDropDown">
+                <i class="ph-file-pdf"></i>IT 00 - Obsoletas
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li class="liDropMarketing"><a class="dropdown-item" href="#">IT 03 Marketing</a>
+                    <ul class="liDropMarketing" id="scroll">
+                        <li><a class="dropdown-item" href="#">IT 03 Jantar de Negócios</a></li>
+                        <li><a class="dropdown-item" href="#">IT 03 Café com Ideas</a></li>
+                        <li><a class="dropdown-item" href="#">IT 03 Solicitações ao Marketing</a></li>
+                        <li><a class="dropdown-item" href="#">IT 03 Jornal Segurança em Debate</a></li>
+                        <li><a class="dropdown-item" href="#">IT 03 Google Adwords</a></li>
+                        <li><a class="dropdown-item" href="#">IT 03 Banco de arquivos abertos,áudios,imagens,textos e
+                                vídeos</a></li>
+                        <li><a class="dropdown-item" href="#">IT 03 Campanhas de E-mail Marketing</a></li>
+                        <li><a class="dropdown-item" href="#">IT 03 Atendimento dos Leads de projeto</a></li>
+                        <li><a class="dropdown-item" href="#">IT 03 Pesquisa de Satisfação </a></li>
+                        <li><a class="dropdown-item" href="#">IT 03 Newsletter RD Station</a></li>
+                    </ul>
+                <li class="liDropVendas"><a class="dropdown-item" href="#">IT 03 Vendas</a>
+                    <ul class="liDropVendas">
+                        <li><a class="dropdown-item" href="#">Sem arquivos</a></li>
+                    </ul>
+                <li class="liDropTecnica"><a class="dropdown-item" href="#">IT 06 técnica</a>
+                    <ul class="liDropTecnica" id="scroll">
+                        <li><a class="dropdown-item" href="#">IT 06 Teste e configuração Enfora MT</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Teste e configuração FOX-EN VF2</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Teste e configuração FOX-IN VB3</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Teste e configuração GL200</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Teste e configuração GV300</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Teste e configuração VDO EVOLUTION</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Teste e configuração ATrack</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Teste e configuração GV55</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Teste e configuração FOX-3 VB4</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Teste e configuração SPOT TRACE</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Configuração e Teste</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Preparação para configuração - Queclink</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Preparo para configuração Falcom</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Instrução de trabalho - Console VDO</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Preparação para configuração - Continental</a></li>
+                        <li><a class="dropdown-item" href="#">IT 06 Calibração de Sensor de Temperatura</a></li>
+                    </ul>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="buttonDropDown">
+                <i class="ph-file-pdf"></i>IT 01 - Planejamento do Negócio
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li class="liDropObsoleto"><a class="dropdown-item" href="#">0. Obsoleto</a>
+                    <ul class="liDropObsoleto">
+                        <li><a class="dropdown-item" href="#">Sem arquivos</a></li>
+                    </ul>
+                <li><a class="dropdown-item" href="#">IT 01 Entregas Mensais</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="buttonDropDown">
+                <i class="ph-file-pdf"></i>IT 02 - Pesquisa e Desenvolvimento
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li class="liDropPesquisaDesenvolvimento"><a class="dropdown-item" href="#">O. Obsoleto</a>
+                    <ul class="liDropPesquisaDesenvolvimento">
+                        <li><a class="dropdown-item" href="#">Sem arquivos</a></li>
+                    </ul>
+                <li><a class="dropdown-item" href="#">IT 02 Homologação de produtos, acessórios e configurações</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="buttonDropDown">
+                <i class="ph-file-pdf"></i>IT 03 - Vendas
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Atendimento dos leads de projeto</a></li>
+                <li><a class="dropdown-item" href="#">Atendimento dos leads de projeto</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="buttonDropDown">
+                <i class="ph-file-pdf"></i>IT 04 - Gestão de Recursos Humanos
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li class="liDropGestao"><a class="dropdown-item" href="#">O. Obsoleto</a>
+                    <ul class="liDropGestao">
+                        <li><a class="dropdown-item" href="#">IT 04 Elaboração do Relatório de Avaliação</a></li>
+                        <li><a class="dropdown-item" href="#">IT 04 Complemento - Fluxograma Recrutamento e Seleção</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">IT 04 Recrutamento e Seleção</a></li>
+                        <li><a class="dropdown-item" href="#">IT 04 Recrutamento e Seleção</a></li>
+                        <li><a class="dropdown-item" href="#">IT 04 Período de Experiência</a></li>
+                    </ul>
+                <li><a class="dropdown-item" href="#">IT 04 Realização de Cursos</a></li>
+                <li><a class="dropdown-item" href="#">IT 04 Recrutamento e Seleção</a></li>
+                <li><a class="dropdown-item" href="#">IT 04 Período de Experiência</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="buttonDropDown">
+                <i class="ph-file-pdf"></i>IT 05 - Compras
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li class="liDropCompras"><a class="dropdown-item" href="#">O. Obsoleto</a>
+                    <ul class="liDropCompras">
+                        <li><a class="dropdown-item" href="#">IT 05 Seleção e Avaliação de Fornecedores</a></li>
+                        <li><a class="dropdown-item" href="#">IT 05 Gestão de Frotas</a></li>
+                    </ul>
+                <li><a class="dropdown-item" href="#">IT 05 Seleção e Avaliação de Fornecedores</a></li>
+                <li><a class="dropdown-item" href="#">IT 05 Gestão de Frotas</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="buttonDropDown">
+                <i class="ph-file-pdf"></i>IT 06 - Suporte e Operações
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" id="scroll">
+                <li><a class="dropdown-item" href="#">Curso Quatenus solution adivisor</a></li>
+                <li><a class="dropdown-item" href="#">Procedimento de teste de pulseira antiestática</a></li>
+                <li><a class="dropdown-item" href="#">Procedimento de calibração de instrumentos</a></li>
+                <li><a class="dropdown-item" href="#">Preparação para Configuração</a></li>
+                <li><a class="dropdown-item" href="#">Configuração e teste via Q!UpdateBox</a></li>
+                <li><a class="dropdown-item" href="#">Teste e configuração Spot Trace</a></li>
+                <li><a class="dropdown-item" href="#">Configuração Smart One C(SATELITAL)</a></li>
+                <li><a class="dropdown-item" href="#">Elaboração de Laudos</a></li>
+                <li><a class="dropdown-item" href="#">Sensor de Temperatura</a></li>
+                <li><a class="dropdown-item" href="#">Teste de chicotes novos</a></li>
+                <li><a class="dropdown-item" href="#">Área embarcada</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="buttonDropDown">
+                <i class="ph-file-pdf"></i>IT 07 - Logísticas
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li class="liDropLogistica"><a class="dropdown-item" href="#">O. Obsoleto</a>
+                    <ul class="liDropLogistica">
+                        <li><a class="dropdown-item" href="#">IT 07 Controle de Estoque de Materiais</a></li>
+                        <li><a class="dropdown-item" href="#">IT 07 Logística Reversa</a></li>
+                    </ul>
+                <li><a class="dropdown-item" href="#">IT 07 Seleção e Avaliação de Representantes Técnicos</a></li>
+                <li><a class="dropdown-item" href="#">IT 07 Treinamento Técnico Quatenus</a></li>
+                <li><a class="dropdown-item" href="#">IT 07 Controle de Estoque de Materiais</a></li>
+                <li><a class="dropdown-item" href="#">IT 07 Logística Reversa</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="buttonDropDown">
+                <i class="ph-file-pdf"></i>IT 08 - Infraestrutura e Sistema de Negócio
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" id="">
+                <li class="liDropInfra"><a class="dropdown-item" href="#">O. Obsoleto</a>
+                    <ul class="liDropInfra" id="scroll">
+                        <li><a class="dropdown-item" href="#">IT 08 Serviços de Gerenciamento de Rede Informática</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">IT 08 Boas Práticas para utilização de password</a></li>
+                        <li><a class="dropdown-item" href="#">IT 08 Utilização de Rede de Informática</a></li>
+                        <li><a class="dropdown-item" href="#">IT 08 Boas Práticas de Gestão de configurações</a></li>
+                        <li><a class="dropdown-item" href="#">IT 08 Critérios de Planejamento e de Aceitação de Acções
+                                de Verficação e Validação</a></li>
+                        <li><a class="dropdown-item" href="#">IT 08 Controle de Chaves</a></li>
+                        <li><a class="dropdown-item" href="#">IT 08 Uso do estacionamento</a></li>
+                        <li><a class="dropdown-item" href="#">IT 08 TIC-HelpDesk</a></li>
+                        <li><a class="dropdown-item" href="#">IT 08 Integração Quatenus QBridge</a></li>
+                        <li><a class="dropdown-item" href="#">IT 08 Realização e Validação de Backup</a></li>
+
+                    </ul>
+                <li><a class="dropdown-item" href="#">IT 08 Boas Práticas para utilização de equipamento
+                        informáticos</a></li>
+                <li><a class="dropdown-item" href="#">IT 08 Boas Práticas para utilização de correio electrónico</a>
+                </li>
+                <li><a class="dropdown-item" href="#">IT 08 Boas Praticas da utilização da internet</a></li>
+                <li><a class="dropdown-item" href="#">IT 08 Gerador NoBreaker</a></li>
+                <li><a class="dropdown-item" href="#">IT 08 Sistema de Alarme Interno</a></li>
+                <li><a class="dropdown-item" href="#">IT 08 Arquivos sobre Ocorrências Internas</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="buttonDropDown">
+                <i class="ph-file-pdf"></i>IT 09 - SGQ e Melhoria Contínua
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">IT 09 Critérios para Auditores Internos</a></li>
+                <li><a class="dropdown-item" href="#">IT 09 Classes de Não Conformidade</a></li>
+                <li><a class="dropdown-item" href="#">IT 09 Registro e Tratamento de Não Conformidades</a></li>
+                <li><a class="dropdown-item" href="#">IT 09 Controle de Docuemntos e Registros</a></li>
+                <li><a class="dropdown-item" href="#">IT 09 Auditoria Interna</a></li>
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="buttonDropDown">
+                <i class="ph-file-pdf"></i>IT 11 - Customer Success e Serviços Pós-Venda
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li class="liDropPastaVendas"><a class="dropdown-item" href="#">Pasta - 06</a>
+                    <ul class="liDropPastaVendas" id="scroll">
+                        <li><a class="dropdown-item" href="#">IT 11 Fluxo de Roubo & Furto</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Ocorrência de Roubo & Furto</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Ativação de produtos(Instalação) - Fluxo Validação
+                                de equipamento</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Ativação de produtos(Instalação)</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Ativação de produtos(Manutenção)</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Desativação de produtos(Desinstalação)</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Desativação de prodtutos(Desinstalação)-
+                                Complemento-Fluxograma</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Procedimentos de Ativação-Leitor de RFID</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Procedimento de Ativação - Teclado de Jornada</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">IT 11 FCA Área técnica</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Laudo Técnico</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Laudo Técnico - Complemento - Fluxograma</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Análise dos dispositivos sem liDropComunicacao
+                                -CMA</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Processo Geral de Testes</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Credenciamento de prestadores</a></li>
+                    </ul>
+                <li class="liDropPastaVenda02" scrollBar><a class="dropdown-item" href="#">Pasta - 10</a>
+                    <ul class="liDropPastaVenda02">
+                        <li><a class="dropdown-item" href="#">IT 11 SAC - Emissão Boleto</a></li>
+                    </ul>
+                <li class="liDropPastaObsoleta"><a class="dropdown-item" href="#">Pasta - Obsoleto</a>
+                    <ul class="liDropPastaObsoleta">
+                        <li><a class="dropdown-item" href="#">IT 11 Processo de Cadastro</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Processo de Cadastro</a></li>
+                    </ul>
+                <li class="liDropDocs"><a class="dropdown-item" href="#">Pasta - Documentos</a>
+                    <ul class="liDropDocs" id="scroll">
+                        <li><a class="dropdown-item" href="#">IT 11 Complemento - Fluxo de Cadastro</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Processo de Cadastro</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Agendamento - Complemento - Fluxograma</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Agendamento</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 SAC - Anexo(Motivo-Objetivo-NSA)</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 SAC - Complemento - Fluxograma</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 SAC</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Concessão de Descontos</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Cancelamento de Contrato - Complemento -
+                                Fluxograma</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Cancelamento de Contrato</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Troca de Titularidade</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Substituição de Veículo</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Substituição de Veículo - Complemento -
+                                Fluxograma</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Cadastro de Nova Adesão</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Cadastro de Nova Adesão - Complemento -
+                                Fluxograma</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Pesquisa de Satisfação</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Criação de cercas electrónicas - Global</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Criação de cercas electrónicas - Sistema</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Criação de cercas electrónicas - Usuário</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Criação de pontos de interesse</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Cadastro de veículo no QBM</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Cadastro de ClienteParceiro no QBM</a></li>
+                        <li><a class="dropdown-item" href="#">IT 11 Envios de Comandos - dispositivos sem
+                                comunicação</a></li>
+                    </ul>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false" id="buttonDropDown">
+                <i class="ph-file-pdf"></i>IT 12 - Gestão Financeira Administrativa
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li class="liDropGestaoFA"><a class="dropdown-item" href="#">O. Obsoleto</a>
+                    <ul class="liDropGestaoFA">
+                        <li><a class="dropdown-item" href="#">IT 12 Processo de Cobrança</a></li>
+                        <li><a class="dropdown-item" href="#">IT 12 Registro de Títulos no Serasa</a></li>
+                        <li><a class="dropdown-item" href="#">IT 12 Bloqueio de Usuário por Inadimplência</a></li>
+                    </ul>
+                <li><a class="dropdown-item" href="#">IT 10 Contas a Pagar</a></li>
+                <li><a class="dropdown-item" href="#">IT 12 Processos Internos - CAR</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--Fim do dropDown-->
+
+    <div class="popup">
+        <div class="popup-content">
+          <h1>X</h1>
+          <h2>Qual o intuito desta plataforma?</h2>
+          <p> Está página tem como função primária a exibição de manuais elaborados pelo setor de desenvolvimento e
+            inovação
+            para auxiliar nas rotinas diárias dos colaboradores internos, para usar basta clicar sobre o menu desejado e
+            após sobre o nome do documento.
+            <br><br>Em casos de dúvidas contatar o setor de Desenvolvimento e Inovação!
+          </p>
+        </div>
+      </div>
+
+    <script src="{% static 'js/popUp' %}"></script>
+
+    {% else %}
+        Você não tem acesso a essa área!
+    {% endif %}
+
+    {% endblock %}

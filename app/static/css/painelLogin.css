@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300&display=swap');
+
+
+body {
+
+    height: 100vh;
+    width: 100vh;
+    background-color: rgb(244, 245, 247);
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-position: center center;
+    margin: 0;
+    padding: 0;
+
+}
+
+.containerBox{
+    display: flex;
+}
+
+/*FORM LOGIN*/
+
+.logoBranca {
+
+
+    position: absolute;
+    width: 30%;
+    height: 15%;
+    left: 34%;
+    top: 26%;
+
+}
+
+.legendaQuatenus {
+
+    position: absolute;
+    left: 38%;
+    top: 39%;
+    font-family: 'Inter';
+    font-size: 1.5rem;
+    color: #FFF;
+    font-style: oblique;
+    display: flex;
+    white-space: nowrap;
+
+
+}
+
+.loginUser {
+
+    box-sizing: border-box;
+    position: absolute;
+    width: 28.5%;
+    height: 6%;
+    left: 36%;
+    top: 47%;
+    background: #FFFFFF;
+    border: 1px solid rgba(243, 110, 33, 0.5);
+
+}
+
+.senhaUser {
+
+    box-sizing: border-box;
+    position: absolute;
+    width: 28.5%;
+    height: 6%;
+    left: 36%;
+    top: 56%;
+    background: #FFFFFF;
+    border: 1px solid rgba(243, 110, 33, 0.5);
+}
+
+.botaoEntrar {
+
+    position: absolute;
+    width: 28.5%;
+    height: 6%;
+    left: 36%;
+    top: 69%;
+    color: #FFF;
+    background: rgba(243, 110, 33, 0.9);
+    border: 1px solid #F36E21;
+    border-radius: 4px;
+    font-style: italic;
+    font-size: 22px;
+    cursor: pointer;
+
+
+}
+
+
+
+input::placeholder {
+    color: #F36E21;
+    font-size: 1.2em;
+
+}
+
+input.custom {
+    caret-color: #F36E21;
+    font: 16px 'Inter', "Arial", "sans-serif";
+}
+
+input:focus {
+    color: #F36E21;
+    font-family: 'Inter';
+    font-size: 20px;
+}
+
+input {
+    font-family: 'Inter';
+    color: #F36E21;
+    left: 36%;
+    position: absolute;
+    top: 62.9%;
+}
+
+textarea:focus,
+input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+a:link {
+	text-decoration: none;
+
+}
+
+a {
+	color: inherit;
+}
+
+a:link {
+	color: #fff;
+ }
+
+.linkQuatenus  :visited{
+	color: #fff;
+}
+.checkOut{
+
+    font-family: 'Inter';
+    position: absolute;
+    left: 35.8%;
+    top: 63%;
+    color: #FFF;
+
+}
+/*FORM LOGIN*/
+/*------------------------------------------------------*/
+/*VERSIONAMENTO COMEÇO*/
+.UILabelProductVersion {
+
+    position: absolute;
+    left: 40%;
+    top: 77%;
+    font-family: 'Inter';
+    font-style: normal;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+}
+
+.UILabelProductCopyright {
+
+    position: absolute;
+    left: 37%;
+    top: 79%;
+    font-family: 'Inter';
+    font-style: normal;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+}
+
+/*VERSIONAMENTO FIM*/
+/*------------------------------------------------------*/
+
+
+
+@media screen and (min-height: 649px) and (max-width: 1440px){
+
+    .logoBranca{
+        left: 35.3%;
+        width: 400px;
+        top: 27%;
+    }
+
+    .legendaQuatenus{
+
+        font-size: 20px;
+        top: 250px;
+        left: 37%;
+    }
+
+    .UILabelProductVersion{
+
+        font-size: 10px;
+
+    }
+
+    .UILabelProductCopyright{
+
+        font-size: 10px;
+
+    }
+
+}
+
+a.cadastroUnic {
+
+    color: #fff;
+    font-size: 19px;
+    position: absolute;
+    left: 57%;
+    top: 63%;
+    font-style: normal;
+}
+.checkOut{
+
+font-family: 'Inter';
+    position: absolute;
+    left: 37.8%;
+    top: 63%;
+    color: #FFF;
+
+}
+
+.checkOutBox{
+
+    position: absolute;
+    left: 38%;
+    top: 63%;
+    color: #FFF;
+}
